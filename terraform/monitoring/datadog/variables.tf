@@ -8,6 +8,11 @@ variable "datadog_app_key" {
   type        = string
 }
 
+variable "datadog_api_url" {
+  description = "api url"
+  type        = string
+}
+
 variable "aws_region" {
   description = "AWS region"
   default     = "us-west-2"
