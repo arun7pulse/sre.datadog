@@ -12,10 +12,4 @@ terraform {
   }
 }
 
-# Load environment-specific variables
-variable "environment" {
-  description = "The environment to deploy to (dev, stg, qas)"
-  type        = string
-}
-
 # Import other modules or resources if needed
