@@ -19,7 +19,7 @@ variable "environment" {
 }
 
 variable "monitor_tags" {
-  description = "Tags for Datadog monitors"
+  description = "Tags for Datadog monitors we can add"
   type        = list(string)
   default     = []
 }
