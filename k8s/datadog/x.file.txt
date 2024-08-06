@@ -1,0 +1,1180 @@
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/util/log/log.go:682 in func1) | Unknown environment variable: DD_REDIS_PASSWORD
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/util/log/log.go:682 in func1) | Deactivating Autoconfig will disable most components. It's recommended to use autoconfig_exclude_features and autoconfig_include_features to activate/deactivate features selectively
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/config/setup/config.go:1631 in LoadCustom) | Unknown key in config file: runtime_security_config.syscall_monitor.enabled
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/config/setup/config.go:1631 in LoadCustom) | Unknown key in config file: runtime_security_config.network.enabled
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/config/setup/config.go:1631 in LoadCustom) | Unknown key in config file: runtime_security_config.activity_dump.path_merge.enabled
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/config/setup/config.go:1631 in LoadCustom) | Unknown key in config file: runtime_security_config.activity_dump.cgroup_wait_list_size
+2024-05-03 05:54:05 UTC | CORE | WARN | (pkg/config/setup/config.go:1635 in LoadCustom) | Unknown environment variable: DD_REDIS_PASSWORD
+2024-05-03 05:54:05 UTC | CORE | WARN | (cmd/system-probe/config/adjust.go:150 in deprecateCustom) | configuration key `network_config.enable_http_monitoring` is deprecated, use `service_monitoring_config.enable_http_monitoring` instead
+2024-05-03 05:54:05 UTC | CORE | WARN | (cmd/system-probe/config/adjust.go:150 in deprecateCustom) | configuration key `network_config.enable_https_monitoring` is deprecated, use `service_monitoring_config.tls.native.enabled` instead
+Getting the status from the agent.
+
+2024-05-03 05:54:05 UTC | CORE | WARN | (cmd/system-probe/config/adjust.go:150 in deprecateCustom) | configuration key `runtime_security_config.activity_dump.cgroup_dump_timeout` is deprecated, use `runtime_security_config.activity_dump.dump_duration` instead
+===============
+Agent (v7.52.1)
+===============
+  Status date: 2024-05-03 05:26:38.384 UTC (1714713998384)
+  Agent start: 2024-05-03 05:26:33.756 UTC (1714713993756)
+  Pid: 11923
+  Go Version: go1.21.8
+  Python Version: 3.11.8
+  Build arch: arm64
+  Agent flavor: agent
+  Log Level: INFO
+
+  Paths
+  =====
+    Config File: /etc/datadog-agent/datadog.yaml
+    conf.d: /etc/datadog-agent/conf.d
+    checks.d: /etc/datadog-agent/checks.d
+
+========
+Hostname
+========
+
+  host_aliases: [lima-rancher-desktop]
+  hostname: lima-rancher-desktop
+  socket-fqdn: lima-rancher-desktop
+  socket-hostname: lima-rancher-desktop
+  host tags:
+    env:dev
+    kube_node:lima-rancher-desktop
+    kube_node_role:control-plane
+    kube_node_role:master
+  hostname provider: container
+  unused hostname providers:
+    'hostname' configuration/environment: hostname is empty
+    'hostname_file' configuration/environment: 'hostname_file' configuration is not enabled
+    aws: not retrieving hostname from AWS: the host is not an ECS instance and other providers already retrieve non-default hostnames
+    azure: azure_hostname_style is set to 'os'
+    fargate: agent is not runnning on Fargate
+    fqdn: 'hostname_fqdn' configuration is not enabled
+    gce: unable to retrieve hostname from GCE: GCE metadata API error: Get "http://169.254.169.254/computeMetadata/v1/instance/hostname": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+    os: Skipping OS hostname as a previous provider found a valid hostname
+
+
+Host Info
+=========
+  bootTime: 2024-04-30 18:16:19 UTC (1714500979000)
+  hostId: 6482817d-90b1-46df-9e4d-2987603778e9
+  kernelArch: aarch64
+  kernelVersion: 6.6.14-0-virt
+  os: linux
+  platform: alpine
+  platformFamily: alpine
+  platformVersion: 3.19.1
+  procs: 248
+  uptime: 59h10m23s
+  virtualizationRole: guest
+  virtualizationSystem: docker
+
+
+======
+Clocks
+======
+
+NTP offset: 301.403ms
+
+========
+Metadata
+========
+
+  agent_version: 7.52.1
+  config_apm_dd_url: 
+  config_dd_url: 
+  config_logs_dd_url: 
+  config_logs_socks5_proxy_address: 
+  config_no_proxy: [169.254.169.254 100.100.100.200]
+  config_process_dd_url: 
+  config_proxy_http: 
+  config_proxy_https: 
+  config_site: 
+  feature_apm_enabled: true
+  feature_container_images_enabled: true
+  feature_csm_vm_containers_enabled: false
+  feature_csm_vm_hosts_enabled: false
+  feature_cspm_enabled: false
+  feature_cspm_host_benchmarks_enabled: false
+  feature_cws_enabled: false
+  feature_cws_network_enabled: true
+  feature_cws_remote_config_enabled: false
+  feature_cws_security_profiles_enabled: false
+  feature_dynamic_instrumentation_enabled: false
+  feature_fips_enabled: false
+  feature_imdsv2_enabled: false
+  feature_logs_enabled: true
+  feature_networks_enabled: true
+  feature_networks_http_enabled: true
+  feature_networks_https_enabled: true
+  feature_oom_kill_enabled: false
+  feature_otlp_enabled: false
+  feature_process_enabled: true
+  feature_process_language_detection_enabled: true
+  feature_processes_container_enabled: false
+  feature_remote_configuration_enabled: true
+  feature_tcp_queue_length_enabled: false
+  feature_usm_enabled: true
+  feature_usm_go_tls_enabled: false
+  feature_usm_http2_enabled: false
+  feature_usm_http_by_status_code_enabled: true
+  feature_usm_istio_enabled: false
+  feature_usm_java_tls_enabled: false
+  feature_usm_kafka_enabled: false
+  feature_windows_crash_detection_enabled: false
+  flavor: agent
+  hostname_source: container
+  install_method_installer_version: datadog-3.59.6
+  install_method_tool: helm
+  install_method_tool_version: Helm
+  logs_transport: HTTP
+  system_probe_core_enabled: true
+  system_probe_gateway_lookup_enabled: true
+  system_probe_kernel_headers_download_enabled: true
+  system_probe_max_connections_per_message: 600
+  system_probe_prebuilt_fallback_enabled: true
+  system_probe_protocol_classification_enabled: true
+  system_probe_root_namespace_enabled: true
+  system_probe_runtime_compilation_enabled: true
+  system_probe_telemetry_enabled: false
+  system_probe_track_tcp_4_connections: true
+  system_probe_track_tcp_6_connections: true
+  system_probe_track_udp_4_connections: true
+  system_probe_track_udp_6_connections: true
+
+=========
+Collector
+=========
+
+
+  Running Checks
+  ==============
+
+    airflow (5.0.0)
+    ---------------
+      Instance ID: airflow:3acc706304311de8 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 108
+      Metric Samples: Last Run: 1, Total: 108
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 108
+      Average Execution Time : 7ms
+      Last Execution Date : 2024-05-03 05:53:53 UTC (1714715633000)
+      Last Successful Execution Date : 2024-05-03 05:53:53 UTC (1714715633000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff190fc910>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:44ac3c13cf211a84 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 1, Total: 109
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 34ms
+      Last Execution Date : 2024-05-03 05:54:00 UTC (1714715640000)
+      Last Successful Execution Date : 2024-05-03 05:54:00 UTC (1714715640000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff19c46e90>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:4911bd69cf6573c6 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 110
+      Metric Samples: Last Run: 1, Total: 110
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 110
+      Average Execution Time : 9ms
+      Last Execution Date : 2024-05-03 05:54:03 UTC (1714715643000)
+      Last Successful Execution Date : 2024-05-03 05:54:03 UTC (1714715643000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff19ec12d0>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:63850a1093cf2037 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 1, Total: 109
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 10ms
+      Last Execution Date : 2024-05-03 05:53:55 UTC (1714715635000)
+      Last Successful Execution Date : 2024-05-03 05:53:55 UTC (1714715635000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff2406e850>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:a3965e7951717522 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 1, Total: 109
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 10ms
+      Last Execution Date : 2024-05-03 05:53:55 UTC (1714715635000)
+      Last Successful Execution Date : 2024-05-03 05:53:55 UTC (1714715635000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff183a5f90>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:f4cc62cb96096722 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 108
+      Metric Samples: Last Run: 1, Total: 108
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 108
+      Average Execution Time : 17ms
+      Last Execution Date : 2024-05-03 05:53:52 UTC (1714715632000)
+      Last Successful Execution Date : 2024-05-03 05:53:52 UTC (1714715632000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff183a4810>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+      Instance ID: airflow:fc84ef527cd89a94 [WARNING]
+      Configuration Source: file:/etc/datadog-agent/conf.d/airflow.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 1, Total: 109
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 8ms
+      Last Execution Date : 2024-05-03 05:54:01 UTC (1714715641000)
+      Last Successful Execution Date : 2024-05-03 05:54:01 UTC (1714715641000)
+
+      Warning: Couldn't connect to URL: http://localhost:8080//api/experimental/test with exception: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: //api/experimental/test (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff2406f4d0>: Failed to establish a new connection: [Errno 111] Connection refused')). Please verify the address is reachable
+
+
+    container
+    ---------
+      Instance ID: container [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/container.d/conf.yaml.default
+      Total Runs: 109
+      Metric Samples: Last Run: 634, Total: 69,106
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 39ms
+      Last Execution Date : 2024-05-03 05:53:53 UTC (1714715633000)
+      Last Successful Execution Date : 2024-05-03 05:53:53 UTC (1714715633000)
+
+
+    cpu
+    ---
+      Instance ID: cpu [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/cpu.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 9, Total: 983
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 0s
+      Last Execution Date : 2024-05-03 05:54:00 UTC (1714715640000)
+      Last Successful Execution Date : 2024-05-03 05:54:00 UTC (1714715640000)
+
+
+    datadog_cluster_agent (2.11.1)
+    ------------------------------
+      Instance ID: datadog_cluster_agent:466c77cf4b72de20 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/datadog_cluster_agent.d/auto_conf.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 85, Total: 9,180
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 32ms
+      Last Execution Date : 2024-05-03 05:53:54 UTC (1714715634000)
+      Last Successful Execution Date : 2024-05-03 05:53:54 UTC (1714715634000)
+
+
+    disk (5.3.0)
+    ------------
+      Instance ID: disk:67cc0574430a16ba [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/disk.d/conf.yaml.default
+      Total Runs: 109
+      Metric Samples: Last Run: 480, Total: 52,320
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 80ms
+      Last Execution Date : 2024-05-03 05:53:52 UTC (1714715632000)
+      Last Successful Execution Date : 2024-05-03 05:53:52 UTC (1714715632000)
+
+
+    docker
+    ------
+      Instance ID: docker [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/docker.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 201, Total: 22,110
+      Events: Last Run: 1, Total: 4
+      Service Checks: Last Run: 1, Total: 110
+      Average Execution Time : 86ms
+      Last Execution Date : 2024-05-03 05:53:59 UTC (1714715639000)
+      Last Successful Execution Date : 2024-05-03 05:53:59 UTC (1714715639000)
+
+
+    file_handle
+    -----------
+      Instance ID: file_handle [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/file_handle.d/conf.yaml.default
+      Total Runs: 109
+      Metric Samples: Last Run: 5, Total: 545
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 0s
+      Last Execution Date : 2024-05-03 05:53:51 UTC (1714715631000)
+      Last Successful Execution Date : 2024-05-03 05:53:51 UTC (1714715631000)
+
+
+    io
+    --
+      Instance ID: io [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/io.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 106, Total: 11,588
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 1ms
+      Last Execution Date : 2024-05-03 05:53:58 UTC (1714715638000)
+      Last Successful Execution Date : 2024-05-03 05:53:58 UTC (1714715638000)
+
+
+    kubelet (7.12.0)
+    ----------------
+      Instance ID: kubelet:2b9bec749170d31d [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/kubelet.d/conf.yaml.default
+      Total Runs: 83
+      Metric Samples: Last Run: 823, Total: 68,272
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 5, Total: 414
+      Average Execution Time : 1.012s
+      Last Execution Date : 2024-05-03 05:54:04 UTC (1714715644000)
+      Last Successful Execution Date : 2024-05-03 05:54:04 UTC (1714715644000)
+
+
+    load
+    ----
+      Instance ID: load [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/load.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 6, Total: 660
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 0s
+      Last Execution Date : 2024-05-03 05:54:05 UTC (1714715645000)
+      Last Successful Execution Date : 2024-05-03 05:54:05 UTC (1714715645000)
+
+
+    memory
+    ------
+      Instance ID: memory [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/memory.d/conf.yaml.default
+      Total Runs: 109
+      Metric Samples: Last Run: 20, Total: 2,180
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 4ms
+      Last Execution Date : 2024-05-03 05:53:57 UTC (1714715637000)
+      Last Successful Execution Date : 2024-05-03 05:53:57 UTC (1714715637000)
+
+
+    network (3.3.0)
+    ---------------
+      Instance ID: network:4b0649b7e11f0772 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/network.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 270, Total: 29,700
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 30ms
+      Last Execution Date : 2024-05-03 05:54:04 UTC (1714715644000)
+      Last Successful Execution Date : 2024-05-03 05:54:04 UTC (1714715644000)
+
+
+    ntp
+    ---
+      Instance ID: ntp:3c427a42a70bbf8 [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/ntp.d/conf.yaml.default
+      Total Runs: 2
+      Metric Samples: Last Run: 1, Total: 2
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 2
+      Average Execution Time : 4.268s
+      Last Execution Date : 2024-05-03 05:41:48 UTC (1714714908000)
+      Last Successful Execution Date : 2024-05-03 05:41:48 UTC (1714714908000)
+
+
+    redisdb (5.3.0)
+    ---------------
+      Instance ID: redisdb:79e48e924f187551 [ERROR]
+      Configuration Source: file:/etc/datadog-agent/conf.d/redisdb.d/auto_conf.yaml
+      Total Runs: 109
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 109
+      Average Execution Time : 5ms
+      Last Execution Date : 2024-05-03 05:54:02 UTC (1714715642000)
+      Last Successful Execution Date : Never
+      Error: Authentication required.
+      Traceback (most recent call last):
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/base/checks/base.py", line 1224, in run
+          self.check(instance)
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/redisdb/redisdb.py", line 560, in check
+          self._check_db()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/redisdb/redisdb.py", line 208, in _check_db
+          conn.ping()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/commands/core.py", line 1216, in ping
+          return self.execute_command("PING", **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/client.py", line 533, in execute_command
+          conn = self.connection or pool.get_connection(command_name, **options)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 1086, in get_connection
+          connection.connect()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 276, in connect
+          self.on_connect()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 379, in on_connect
+          self.read_response()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 500, in read_response
+          response = self._parser.read_response(disable_decoding=disable_decoding)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+          result = self._read_response(disable_decoding=disable_decoding)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/_parsers/resp2.py", line 38, in _read_response
+          raise error
+      redis.exceptions.AuthenticationError: Authentication required.
+      Instance ID: redisdb:bc959f2b76e666ba [ERROR]
+      Configuration Source: file:/etc/datadog-agent/conf.d/redisdb.yaml
+      Total Runs: 110
+      Metric Samples: Last Run: 0, Total: 0
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 1, Total: 110
+      Average Execution Time : 1.02s
+      Last Execution Date : 2024-05-03 05:54:02 UTC (1714715642000)
+      Last Successful Execution Date : Never
+      Error: Error -5 connecting to name:6379. No address associated with hostname.
+      Traceback (most recent call last):
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 264, in connect
+          sock = self.retry.call_with_retry(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/retry.py", line 46, in call_with_retry
+          return do()
+                 ^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 265, in <lambda>
+          lambda: self._connect(), lambda error: self.disconnect(error)
+                  ^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 595, in _connect
+          for res in socket.getaddrinfo(
+                     ^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/socket.py", line 962, in getaddrinfo
+          for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      socket.gaierror: [Errno -5] No address associated with hostname
+
+      During handling of the above exception, another exception occurred:
+
+      Traceback (most recent call last):
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/base/checks/base.py", line 1224, in run
+          self.check(instance)
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/redisdb/redisdb.py", line 560, in check
+          self._check_db()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/datadog_checks/redisdb/redisdb.py", line 208, in _check_db
+          conn.ping()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/commands/core.py", line 1216, in ping
+          return self.execute_command("PING", **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/client.py", line 533, in execute_command
+          conn = self.connection or pool.get_connection(command_name, **options)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 1086, in get_connection
+          connection.connect()
+        File "/opt/datadog-agent/embedded/lib/python3.11/site-packages/redis/connection.py", line 270, in connect
+          raise ConnectionError(self._error_message(e))
+      redis.exceptions.ConnectionError: Error -5 connecting to name:6379. No address associated with hostname.
+
+    telemetry
+    ---------
+      Instance ID: telemetry [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/telemetry.d/conf.yaml.default
+      Total Runs: 109
+      Metric Samples: Last Run: 4, Total: 436
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 0s
+      Last Execution Date : 2024-05-03 05:53:56 UTC (1714715636000)
+      Last Successful Execution Date : 2024-05-03 05:53:56 UTC (1714715636000)
+
+
+    uptime
+    ------
+      Instance ID: uptime [OK]
+      Configuration Source: file:/etc/datadog-agent/conf.d/uptime.d/conf.yaml.default
+      Total Runs: 110
+      Metric Samples: Last Run: 1, Total: 110
+      Events: Last Run: 0, Total: 0
+      Service Checks: Last Run: 0, Total: 0
+      Average Execution Time : 0s
+      Last Execution Date : 2024-05-03 05:54:03 UTC (1714715643000)
+      Last Successful Execution Date : 2024-05-03 05:54:03 UTC (1714715643000)
+
+  Loading Errors
+  ==============
+    orchestrator_pod
+    ----------------
+      Core Check Loader:
+        Could not configure check orchestrator_pod: orchestrator check is configured but the cluster name is empty
+
+      JMX Check Loader:
+        check is not a jmx check, or unable to determine if it's so
+
+      Python Check Loader:
+        unable to import module 'orchestrator_pod': No module named 'orchestrator_pod'
+
+
+=========
+APM Agent
+=========
+
+  Status: Running
+  Pid: 11981
+  Uptime: 1651 seconds
+  Mem alloc: 22,097,664 bytes
+  Hostname: lima-rancher-desktop
+  Receiver: 0.0.0.0:8126
+  Endpoints:
+    https://trace.agent.datadoghq.com
+
+  Receiver (previous minute)
+  ==========================
+    No traces received in the previous minute.
+
+
+  Writer (previous minute)
+  ========================
+    Traces: 0 payloads, 0 traces, 0 events, 0 bytes
+    Stats: 0 payloads, 0 stats buckets, 0 bytes
+
+=============
+Autodiscovery
+=============
+
+  Enabled Features
+  ================
+    docker
+    kubernetes
+    orchestratorexplorer
+
+=====================
+Datadog Cluster Agent
+=====================
+
+    - Datadog Cluster Agent endpoint detected: https://10.43.20.26:5005
+    Successfully connected to the Datadog Cluster Agent.
+    - Running: 7.52.1+commit.51dd448
+
+=========
+DogStatsD
+=========
+
+  Event Packets: 0
+  Event Parse Errors: 0
+  Metric Packets: 26,229
+  Metric Parse Errors: 0
+  Service Check Packets: 0
+  Service Check Parse Errors: 0
+  Udp Bytes: 2,710,455
+  Udp Packet Reading Errors: 0
+  Udp Packets: 8,863
+  Uds Bytes: 0
+  Uds Origin Detection Errors: 0
+  Uds Packet Reading Errors: 0
+  Uds Packets: 1
+  Unterminated Metric Errors: 0
+
+Tip: For troubleshooting, enable 'dogstatsd_metrics_stats_enable' in the main datadog.yaml file to generate Dogstatsd logs. Once 'dogstatsd_metrics_stats_enable' is enabled, users can also use 'dogstatsd-stats' command to get visibility of the latest collected metrics.
+
+=========
+JMX Fetch
+=========
+
+  Information
+  ==================
+  Initialized checks
+  ==================
+    no checks
+
+  Failed checks
+  =============
+    no checks
+
+
+==========
+Logs Agent
+==========
+
+    Reliable: Sending compressed logs in HTTPS to agent-http-intake.logs.datadoghq.com on port 443
+    BytesSent: 6767544
+    EncodedBytesSent: 1060639
+    LogsProcessed: 3799
+    LogsSent: 3824
+    CoreAgentProcessOpenFiles: 64
+    OSFileLimit: 1048576
+  ============
+  Integrations
+  ============
+
+  default/airflow-redis-0/redis
+  -----------------------------
+    - Type: file
+      Identifier: 4c5c15e79c2187f94d625eef18721f4f89032b847238ae08b33cd1455a04e392
+      Path: /var/log/pods/default_airflow-redis-0_90aa1bdd-00a3-4730-8228-fb7e520edd15/redis/*.log
+      Service: redis
+      Source: redis
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 699   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  kube-system/metrics-server-54fd9b65b-9w8xq/metrics-server
+  ---------------------------------------------------------
+    - Type: file
+      Identifier: 3c7bde90c2f70b018ae03e5de74a0474f7c66e4146884be47f4255263500ca23
+      Path: /var/log/pods/kube-system_metrics-server-54fd9b65b-9w8xq_45a08a74-5e4c-4599-a62e-60c12a54126f/metrics-server/*.log
+      Service: mirrored-metrics-server
+      Source: mirrored-metrics-server
+      Status: OK
+        1 files tailed out of 2 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-cluster-agent-87f9cc7d7-cdhf6/init-volume
+  ---------------------------------------------------------------
+    - Type: file
+      Identifier: ddb5333457c7a0c42605b7b29dc8a67cd26d364ab6df27f8fe7b0333aa9296d1
+      Path: /var/log/pods/default_datadog-agent-cluster-agent-87f9cc7d7-cdhf6_4abd61d9-e3e6-4294-9056-92225c988a32/init-volume/*.log
+      Service: cluster-agent
+      Source: cluster-agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-ntjc6/init-config
+  ---------------------------------------
+    - Type: file
+      Identifier: 8b41033b9d2f9e2bde552dc0d37473bf07fd7951914277b3433596e5878a838b
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/init-config/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-ntjc6/seccomp-setup
+  -----------------------------------------
+    - Type: file
+      Identifier: b8414208470cb8fa9c16e0f803cf0c5ed4aead8fe525be2a05ebb95deb546b7c
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/seccomp-setup/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  kube-system/local-path-provisioner-6c86858495-n78dg/local-path-provisioner
+  --------------------------------------------------------------------------
+    - Type: file
+      Identifier: df425ecb1b01f5361e4d05327343a8220020d557ae3ebce55a8c8e9f89da2b9f
+      Path: /var/log/pods/kube-system_local-path-provisioner-6c86858495-n78dg_0c5d8ef2-cfe7-4151-9f5f-4ac4f8723b1e/local-path-provisioner/*.log
+      Service: local-path-provisioner
+      Source: local-path-provisioner
+      Status: OK
+        1 files tailed out of 2 files matching
+      Inputs:
+        /var/log/pods/kube-system_local-path-provisioner-6c86858495-n78dg_0c5d8ef2-cfe7-4151-9f5f-4ac4f8723b1e/local-path-provisioner/9.log  
+      Bytes Read: 62160   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 1
+        24h Peak Latency (ms): 1
+
+  default/airflow-worker-0/worker-log-groomer
+  -------------------------------------------
+    - Type: file
+      Identifier: 665f0d0a2ca494367d6f5d3e91f421d7fffa1de05e9d3f907677f4f1cefc2b68
+      Path: /var/log/pods/default_airflow-worker-0_d38eb553-49ca-4cb4-b08b-511c596de4ca/worker-log-groomer/*.log
+      Service: airflow
+      Source: airflow
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 415   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/airflow-webserver-5db494dcf4-8wqxx/webserver
+  ----------------------------------------------------
+    - Type: file
+      Identifier: 48f99eb1615010deac9d3fe50df03712bdb1666311e0bc0770ecf72fb7a284b3
+      Path: /var/log/pods/default_airflow-webserver-5db494dcf4-8wqxx_fbf86cd8-e3f0-4fce-84b1-6ef4c28ccfda/webserver/*.log
+      Service: airflow
+      Source: airflow
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 67283   
+      Pipeline Latency:
+        Average Latency (ms): 1
+        24h Average Latency (ms): 1
+        Peak Latency (ms): 83
+        24h Peak Latency (ms): 83
+
+  default/airflow-worker-0/worker
+  -------------------------------
+    - Type: file
+      Identifier: aef4168f1fd9f3289c6813592ef35a00a43ce7144cfc6bdd2e02ff6f79af4d51
+      Path: /var/log/pods/default_airflow-worker-0_d38eb553-49ca-4cb4-b08b-511c596de4ca/worker/*.log
+      Service: airflow
+      Source: airflow
+      Status: OK
+        1 files tailed out of 2 files matching  
+      Bytes Read: 424   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-ntjc6/init-volume
+  ---------------------------------------
+    - Type: file
+      Identifier: d2709b638432637f954418400b0ac19776f82f961de219865ce2aeb3d35d1b13
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/init-volume/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-ntjc6/process-agent
+  -----------------------------------------
+    - Type: file
+      Identifier: 1e8452299e8fa983d44484180005983159ffae07115136e6d5a86fb0d16e96a3
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/process-agent/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 4192   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 3
+        24h Peak Latency (ms): 3
+
+  default/airflow-scheduler-676766578f-8fbtz/scheduler
+  ----------------------------------------------------
+    - Type: file
+      Identifier: d92aa73ac70befe3ba995adbbe3e466a964a7616e2104e37834a7a2f41189696
+      Path: /var/log/pods/default_airflow-scheduler-676766578f-8fbtz_0e74aade-62cf-43e9-85b7-d5bc393aa615/scheduler/*.log
+      Service: airflow
+      Source: airflow
+      Status: OK
+        1 files tailed out of 2 files matching
+      Inputs:
+        /var/log/pods/default_airflow-scheduler-676766578f-8fbtz_0e74aade-62cf-43e9-85b7-d5bc393aa615/scheduler/2.log  
+      Bytes Read: 1176   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/airflow-scheduler-676766578f-8fbtz/scheduler-log-groomer
+  ----------------------------------------------------------------
+    - Type: file
+      Identifier: 9d690ca30bed763754f00e997a19ff8940dfdea13de8d228a7434bc8f7705fe5
+      Path: /var/log/pods/default_airflow-scheduler-676766578f-8fbtz_0e74aade-62cf-43e9-85b7-d5bc393aa615/scheduler-log-groomer/*.log
+      Service: airflow
+      Source: airflow
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/default_airflow-scheduler-676766578f-8fbtz_0e74aade-62cf-43e9-85b7-d5bc393aa615/scheduler-log-groomer/0.log  
+      Bytes Read: 415   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/airflow-webserver-5db494dcf4-8wqxx/wait-for-airflow-migrations
+  ----------------------------------------------------------------------
+    - Type: file
+      Identifier: d21c8746427fbdd887e97cc99074cd951bf95b7fc0dcfc12015f27e5eca254a9
+      Path: /var/log/pods/default_airflow-webserver-5db494dcf4-8wqxx_fbf86cd8-e3f0-4fce-84b1-6ef4c28ccfda/wait-for-airflow-migrations/*.log
+      Service: airflow
+      Source: airflow
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-cluster-agent-87f9cc7d7-cdhf6/cluster-agent
+  -----------------------------------------------------------------
+    - Type: file
+      Identifier: f3275c0de905ca7497fb24364ccfc342a9a9f34cc8b3d2360bd05b191d2dd8b6
+      Path: /var/log/pods/default_datadog-agent-cluster-agent-87f9cc7d7-cdhf6_4abd61d9-e3e6-4294-9056-92225c988a32/cluster-agent/*.log
+      Service: cluster-agent
+      Source: cluster-agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 2295   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 1
+        24h Peak Latency (ms): 1
+
+  default/airflow-triggerer-0/triggerer
+  -------------------------------------
+    - Type: file
+      Identifier: 4cfe0b126bc6ca8197e8a27b6d7da9a7908fbcd3e9ab1f66a6fb6895ab88c5db
+      Path: /var/log/pods/default_airflow-triggerer-0_64080da6-1a28-4022-ac12-a944b852049a/triggerer/*.log
+      Service: airflow
+      Source: airflow
+      Status: OK
+        1 files tailed out of 2 files matching  
+      Bytes Read: 5489   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 22
+        24h Peak Latency (ms): 22
+
+  default/airflow-triggerer-0/triggerer-log-groomer
+  -------------------------------------------------
+    - Type: file
+      Identifier: 9a4411f9a47ab385f10ef9fc70d8cf6f47f41d79feaa540a839450d77c6c7eb8
+      Path: /var/log/pods/default_airflow-triggerer-0_64080da6-1a28-4022-ac12-a944b852049a/triggerer-log-groomer/*.log
+      Service: airflow
+      Source: airflow
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 414   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/datadog-agent-ntjc6/agent
+  ---------------------------------
+    - Type: file
+      Identifier: bda5c6ddce9a3f61c8e6924b7c11c14399095f780fc51f1c2062bc753037ee65
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/agent/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 1170418   
+      Pipeline Latency:
+        Average Latency (ms): 1
+        24h Average Latency (ms): 1
+        Peak Latency (ms): 75
+        24h Peak Latency (ms): 75
+
+  default/datadog-agent-ntjc6/system-probe
+  ----------------------------------------
+    - Type: file
+      Identifier: 8e21ec8b48916cd297ef99752dccbc943999354cde32ccbf8db72ed578b32b5b
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/system-probe/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 19267   
+      Pipeline Latency:
+        Average Latency (ms): 1
+        24h Average Latency (ms): 1
+        Peak Latency (ms): 38
+        24h Peak Latency (ms): 38
+
+  default/kafka-client/kafka-client
+  ---------------------------------
+    - Type: file
+      Identifier: fb56304214e7771a9a321152c049178390be5182e36c5e23ff6d2a1d1899e837
+      Path: /var/log/pods/default_kafka-client_3159575a-bb05-455b-91fd-328b301af0b4/kafka-client/*.log
+      Service: kafka
+      Source: kafka
+      Status: OK
+        1 files tailed out of 1 files matching
+      Inputs:
+        /var/log/pods/default_kafka-client_3159575a-bb05-455b-91fd-328b301af0b4/kafka-client/0.log  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  default/airflow-postgresql-0/postgresql
+  ---------------------------------------
+    - Type: file
+      Identifier: a6da89dd974fb2c6f02f74461b7f91049cb8dc98186dbf448761d56b6c58f700
+      Path: /var/log/pods/default_airflow-postgresql-0_e6a37a19-6edb-48a4-af91-97c314698c0a/postgresql/*.log
+      Service: postgresql
+      Source: postgresql
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 2969   
+      Pipeline Latency:
+        Average Latency (ms): 1
+        24h Average Latency (ms): 1
+        Peak Latency (ms): 19
+        24h Peak Latency (ms): 19
+
+  default/airflow-statsd-5667dd85ff-4v46s/statsd
+  ----------------------------------------------
+    - Type: file
+      Identifier: 41924d4e4683bf83716835e4e814144ef59343c9200beaa40229e4600aa67d42
+      Path: /var/log/pods/default_airflow-statsd-5667dd85ff-4v46s_47238fc9-c921-40ff-a161-16a885c7669e/statsd/*.log
+      Service: statsd-exporter
+      Source: statsd-exporter
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 0   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 0
+        24h Peak Latency (ms): 0
+
+  kube-system/coredns-6799fbcd5-mpgc7/coredns
+  -------------------------------------------
+    - Type: file
+      Identifier: 13e274503319c54ba9ad71758fe4ff491d31db0255cba5da84b43bc5ff17b2f1
+      Path: /var/log/pods/kube-system_coredns-6799fbcd5-mpgc7_a0d27406-ea55-4399-a337-15d5160524ff/coredns/*.log
+      Service: mirrored-coredns-coredns
+      Source: mirrored-coredns-coredns
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 18755   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 4
+        24h Peak Latency (ms): 4
+
+  default/datadog-agent-ntjc6/trace-agent
+  ---------------------------------------
+    - Type: file
+      Identifier: b04c078883241b5d3bb8974b1af16dcd0f850eb435c33a5d584a57273121374a
+      Path: /var/log/pods/default_datadog-agent-ntjc6_f1504a9e-2935-46ca-acba-a181a71a2b26/trace-agent/*.log
+      Service: agent
+      Source: agent
+      Status: Pending
+        1 files tailed out of 1 files matching  
+      Bytes Read: 4293   
+      Pipeline Latency:
+        Average Latency (ms): 0
+        24h Average Latency (ms): 0
+        Peak Latency (ms): 13
+        24h Peak Latency (ms): 13
+
+====
+OTLP
+====
+
+  Status: Not enabled
+  Collector status: Not running
+
+
+
+=============
+Process Agent
+=============
+
+  Version: 7.52.1
+  Status date: 2024-05-03 05:54:05.522 UTC (1714715645522)
+  Process Agent Start: 2024-05-03 05:26:34.008 UTC (1714713994008)
+  Pid: 12053
+  Go Version: go1.21.8
+  Build arch: arm64
+  Log Level: INFO
+  Enabled Checks: [connections process rtprocess]
+  Allocated Memory: 25,388,336 bytes
+  Hostname: lima-rancher-desktop
+  System Probe Process Module Status: Not running
+  Process Language Detection Enabled: True
+
+  =================
+  Process Endpoints
+  =================
+    https://process.datadoghq.com - API Key ending with:
+        - f0bc6
+
+  =========
+  Collector
+  =========
+    Last collection time: 2024-05-03 05:53:56
+    Docker socket: 
+    Number of processes: 162
+    Number of containers: 20
+    Process Queue length: 0
+    RTProcess Queue length: 0
+    Connections Queue length: 0
+    Event Queue length: 0
+    Pod Queue length: 0
+    Process Bytes enqueued: 0
+    RTProcess Bytes enqueued: 0
+    Connections Bytes enqueued: 0
+    Event Bytes enqueued: 0
+    Pod Bytes enqueued: 0
+    Drop Check Payloads: []
+
+  ==========
+  Extractors
+  ==========
+
+    Workloadmeta
+    ============
+      Cache size: 162
+      Stale diffs discarded: 1
+      Diffs dropped: 0
+
+====================
+Remote Configuration
+====================
+
+
+Organization enabled: True
+API Key: Authorized
+Last error: None
+
+
+
+============
+System Probe
+============
+
+  Status: Running
+  Uptime: 27m15.000627529s
+  Last Updated: 2024-05-03 05:53:52 UTC (1714715632000)
+
+  USM
+  ===
+    Status: <no value>
+
+  NPM
+  ===
+    Status: Running
+    Last Check: 2024-05-03 05:53:44 UTC (1714715624000)
+
+  Event Monitor
+  ================
+    Status: Running
+
+
+========================
+Transport Proxy Warnings
+========================
+
+  No Transport Proxy Warnings
+
+==========
+Aggregator
+==========
+
+  Checks Metric Sample: 315,569
+  Dogstatsd Metric Sample: 26,230
+  Event: 5
+  Events Flushed: 5
+  Number Of Flushes: 109
+  Series Flushed: 281,504
+  Service Check: 1,620
+  Service Checks Flushed: 1,713
+  container-images: 30
+
+=========
+Endpoints
+=========
+
+  https://app.datadoghq.com - API Key ending with:
+      - f0bc6
+
+=========
+Forwarder
+=========
+
+  Transactions
+  ============
+    Cluster: 0
+    ClusterRole: 0
+    ClusterRoleBinding: 0
+    CronJob: 0
+    CustomResource: 0
+    CustomResourceDefinition: 0
+    DaemonSet: 0
+    Deployment: 0
+    Dropped: 0
+    HighPriorityQueueFull: 0
+    HorizontalPodAutoscaler: 0
+    Ingress: 0
+    Job: 0
+    Namespace: 0
+    Node: 0
+    OrchestratorManifest: 0
+    PersistentVolume: 0
+    PersistentVolumeClaim: 0
+    Pod: 0
+    ReplicaSet: 0
+    Requeued: 0
+    Retried: 0
+    RetryQueueSize: 0
+    Role: 0
+    RoleBinding: 0
+    Service: 0
+    ServiceAccount: 0
+    StatefulSet: 0
+    VerticalPodAutoscaler: 0
+
+  Transaction Successes
+  =====================
+    Total number: 239
+    Successes By Endpoint:
+      check_run_v1: 109
+      intake: 12
+      metadata_v1: 9
+      series_v2: 109
+
+  On-disk storage
+  ===============
+    On-disk storage is disabled. Configure `forwarder_storage_max_size_in_bytes` to enable it.
+
+  API Keys status
+  ===============
+    API key ending with f0bc6: API Key valid
+

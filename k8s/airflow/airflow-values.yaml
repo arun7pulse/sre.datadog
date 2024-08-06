@@ -1,0 +1,7 @@
+# values.yaml
+# Airflow executor
+executor: "KubernetesExecutor"
+
+config:
+  core:
+    dags_folder: '{{ include "airflow_dags" ./dags }}'

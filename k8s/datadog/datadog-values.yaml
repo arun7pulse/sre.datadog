@@ -1,0 +1,5 @@
+datadog:
+  apiKeyExistingSecret: datadog-secret
+  logs:
+    enabled: true
+    containerCollectAll: true
