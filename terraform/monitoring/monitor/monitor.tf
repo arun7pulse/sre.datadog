@@ -16,8 +16,9 @@ provider "datadog" {
 
 resource "datadog_monitor" "default" {
   for_each = var.monitored_metrics
-  name     = each.value["monitor_name"] != null ? each.value["monitor_name"] : format("%s_%s_metric_monitor", each.value["db_name"], each.value["metric"])
-  type     = "metric alert"
+  name     = each.value["monitor_name"] != null ? each.value["monitor_name"] : format("%s_%s_%s_%s_metric_monitor", var.env, var.owner, var.app, each.value["metric"])
+  # name     = each.value["monitor_name"] != null ? each.value["monitor_name"] : format("%s_%s_metric_monitor", each.value["db_name"], each.value["metric"])
+  type = "metric alert"
   # message  = format("\n\n{{#is_alert}} {{override_priority 'P3'}} \nCRITICAL LEVEL TRIGEERED - Metric %s \nNotify:%s \n{{event.text}} \n{{/is_alert}} \n\n{{#is_alert_recovery}} {{override_priority 'P4'}} \nCRITICAL ALERT RECOVERED - Metric %s \nNotify:%s \n{{event.text}} \n{{/is_alert_recovery}} \n\n{{#is_warning}} {{override_priority 'P4'}} \nWARNING LEVEL TRIGGERED - Metric %s \nNotify:%s \n{{event.text}} \n{{/is_warning}} \n\n{{#is_warning_recovery}} {{override_priority 'P5'}} \nWARNING LEVEL RECOVERED - Metric %s \nNotify:%s \n{{event.text}} \n{{/is_warning_recovery}} \n\n***\t%s_%s_TEAM ALERT\t***", each.value["metric"], var.notify_alert, each.value["metric"], var.notify_alert_recovery, each.value["metric"], var.notify_warn, each.value["metric"], var.notify_warn_recovery, var.env, var.team)
   message = <<-EOT
   {{#is_alert}} {{override_priority 'P3'}}

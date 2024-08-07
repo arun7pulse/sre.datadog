@@ -150,10 +150,9 @@ variable "escalation_message" {
   default     = "This is a reminder of an alert. Alert have not acknowledged/verified for 30 mins.Kindly check asap"
 }
 
-
 variable "monitored_metrics" {
   type = map(object({
-    db_name           = string
+    db_name           = optional(string)
     metric            = string
     operator          = optional(string)
     warning           = optional(number)
