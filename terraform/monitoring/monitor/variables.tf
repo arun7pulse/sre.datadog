@@ -1,5 +1,5 @@
 # Datadog App Key, API Key and API URL :
-
+# Mandatory Variables. 
 variable "datadog_api_key" {
   description = "api key"
   type        = string
@@ -21,18 +21,134 @@ variable "TF_CLI_ARGS_plan" {
   default     = ""
 }
 
-# # Environment Variables
-# variable "env" {
-#   type        = string
-#   description = "Environment We're building for"
-# }
+variable "env" {
+  description = "env name for categorise."
+  type        = string
+}
 
-# # App Variables
-# variable "app" {
-#   type        = string
-#   description = "Application name we're building for"
-# }
+variable "owner" {
+  description = "datadog team for mapping"
+  type        = string
+  default     = "gpt"
+}
 
+variable "team" {
+  description = "datadog team for mapping"
+  type        = string
+  default     = "gpt-plim"
+}
+
+variable "app" {
+  description = "datadog team for mapping"
+  type        = string
+  default     = "plim"
+}
+
+variable "tags" {
+  description = "A map of tags to add to all resources"
+  type        = list(string)
+  default     = []
+}
+
+variable "notify_alert" {
+  description = "Receive an alert"
+  type        = string
+}
+
+variable "notify_alert_recovery" {
+  description = "Receive an alert recovery"
+  type        = string
+}
+
+variable "notify_warn" {
+  description = "Receive an warn"
+  type        = string
+}
+
+variable "notify_warn_recovery" {
+  description = "Receive an warning recovery"
+  type        = string
+}
+
+# Optional Variables.
+
+variable "notify_nodata" {
+  description = "when no data found metric for ceratin amount time, Datadog will trigger an alert"
+  type        = string
+  default     = true
+}
+
+variable "notify_audit" {
+  description = " When someone is modify the monitor and alert -Datadog will trigger an alert"
+  type        = string
+  default     = true
+}
+
+variable "renotify_occur" {
+  description = " Renotify the notification after x mins"
+  type        = number
+  default     = 2
+}
+
+variable "team_name" {
+  description = "Team_name as atag"
+  type        = string
+  default     = "GPT"
+}
+
+variable "renotify_status" {
+  description = " Renotify the notification when there is no data ,warning and critical alerts"
+  type        = list(string)
+  default     = ["alert"] # default = ["no data", "alert"]
+}
+
+variable "priority_status" {
+  description = " Integer from 1 (high) to 5 (low) indicating alert severity"
+  type        = number
+  default     = 5 # default 5-Info
+}
+
+variable "renotify_interval" {
+  description = "Renotify-critical alert after 30 mins"
+  type        = number
+  default     = 30
+}
+
+variable "period" {
+  description = "evaluation period"
+  type        = string
+  default     = "6h"
+}
+
+variable "operator" {
+  description = "comparison operator"
+  type        = string
+  default     = ">="
+}
+
+variable "byfilter" {
+  description = "byidentifier to identify by the resource"
+  type        = string
+  default     = "env:npd AND lll_team:gpt-plim"
+}
+
+variable "byidentifier" {
+  description = "byidentifier to identify by the resource"
+  type        = list(string)
+  default     = ["dbinstanceidentifier"]
+}
+
+variable "notification_preset_name" {
+  description = "notification_preset_name details"
+  type        = string
+  default     = "show_all"
+}
+
+variable "escalation_message" {
+  description = "escalation_message operator message"
+  type        = string
+  default     = "This is a reminder of an alert. Alert have not acknowledged/verified for 30 mins.Kindly check asap"
+}
 
 
 variable "monitored_metrics" {
@@ -47,10 +163,10 @@ variable "monitored_metrics" {
     period            = optional(string)
     monitor_name      = optional(string)
     metric_type       = optional(string)
-    byidentifier      = optional(string)
+    byfilter          = optional(string)
+    byidentifier      = optional(list(string))
   }))
 }
-
 
 # variable "monitored_metrics_dynamic" {
 #   type = map(object({
@@ -66,8 +182,6 @@ variable "monitored_metrics" {
 #     metric_type       = optional(string)
 #   }))
 # }
-
-
 
 # variable "monitored_anom_metrics" {
 #   type = map(object({
@@ -90,8 +204,6 @@ variable "monitored_metrics" {
 #     def_zero          = optional(string)
 #   }))
 # }
-
-
 
 # variable "monitored_forecast_metrics" {
 #   type = map(object({
@@ -268,7 +380,6 @@ variable "default_thresholds" {
       critical_recovery = 149999999
       period            = "5m"
     }
-
     "aws.ec2.disk_write_bytes" = {
       operator          = ">="
       warning           = 100000000
@@ -277,7 +388,6 @@ variable "default_thresholds" {
       critical_recovery = 149999999
       period            = "5m"
     }
-
     "aws.ec2.disk_read_ops" = {
       operator          = ">="
       warning           = 100000000
@@ -286,7 +396,6 @@ variable "default_thresholds" {
       critical_recovery = 149999999
       period            = "5m"
     }
-
     "aws.ec2.disk_write_ops" = {
       operator          = ">="
       warning           = 100000000
@@ -305,7 +414,6 @@ variable "default_thresholds" {
     }
   }
 }
-
 
 variable "default_dyn_thresholds" {
   type = map(object({
@@ -381,7 +489,6 @@ variable "default_anom_thresholds" {
   }
 }
 
-
 variable "default_forecast_thresholds" {
   type = map(object({
     operator          = string
@@ -416,117 +523,4 @@ variable "default_forecast_thresholds" {
     }
   }
 }
-variable "tags" {
-  description = "A map of tags to add to all resources"
-  type        = list(string)
-  default     = []
-}
 
-variable "notify_nodata" {
-  description = "when no data found metric for ceratin amount time, Datadog will trigger an alert"
-  type        = string
-  default     = true
-}
-
-variable "notify_audit" {
-  description = " When someone is modify the monitor and alert -Datadog will trigger an alert"
-  type        = string
-  default     = true
-
-}
-
-variable "renotify_occur" {
-  description = " Renotify the notification after x mins"
-  type        = number
-  default     = 2
-}
-
-variable "team_name" {
-  description = "Team_name as atag"
-  type        = string
-  default     = "GPT"
-}
-
-variable "renotify_status" {
-  description = " Renotify the notification when there is no data ,warning and critical alerts"
-  type        = list(string)
-  # default     = ["no data", "alert"]
-  default = ["alert"]
-}
-
-variable "priority_status" {
-  description = " Integer from 1 (high) to 5 (low) indicating alert severity"
-  type        = number
-  default     = 5 # default 5-Info
-}
-
-variable "renotify_interval" {
-  description = "Renotify-critical alert after 30 mins"
-  type        = number
-  default     = 30
-}
-
-variable "notify_alert" {
-  description = "Receive an alert"
-  type        = string
-}
-
-variable "notify_alert_recovery" {
-  description = "Receive an alert recovery"
-  type        = string
-}
-
-variable "notify_warn" {
-  description = "Receive an warn"
-  type        = string
-}
-
-variable "notify_warn_recovery" {
-  description = "Receive an warning recovery"
-  type        = string
-}
-
-variable "period" {
-  description = "evaluation period"
-  type        = string
-  default     = "6h"
-}
-
-variable "operator" {
-  description = "comparison operator"
-  type        = string
-  default     = ">="
-}
-
-
-
-
-variable "lll_owner" {
-  description = "lll_owner name"
-  type        = string
-  default     = "gpt"
-}
-
-variable "lll_team" {
-  description = "lll_team name"
-  type        = string
-  default     = "gpt-plim"
-}
-
-variable "team" {
-  description = "datadog team for mapping"
-  type        = string
-  default     = "GPT-PLIM"
-}
-
-variable "environment" {
-  description = "env name for categorise."
-  type        = string
-  # default     = "npd"
-}
-
-variable "byidentifier" {
-  description = "byidentifier to identify by the resource"
-  type        = string
-  default     = "dbinstanceidentifier"
-}
