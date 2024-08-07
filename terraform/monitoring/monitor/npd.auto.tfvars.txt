@@ -1,0 +1,158 @@
+# environment specific variables for Prod :
+notify_nodata  = false
+notify_audit   = false
+renotify_occur = 1
+period         = "6h"
+
+environment = "npd"
+
+tags = ["env:npd", "lll_owner:gpt", "lll_team:gpt-plim", "lll_costcenter:40", "team:GPT-PLIM"]
+
+# Email/DL/Teams channel/Pagerduty OR combination of channel can be added below:
+
+notify_alert          = "@4b4aa3fe.lululemon.com@amer.teams.ms,@aannamalai2@lululemon.com"
+notify_alert_recovery = "@4b4aa3fe.lululemon.com@amer.teams.ms,@aannamalai2@lululemon.com"
+notify_warn           = "@2c91e729.lululemon.com@amer.teams.ms,@aannamalai2@lululemon.com"
+notify_warn_recovery  = "@2c91e729.lululemon.com@amer.teams.ms,@aannamalai2@lululemon.com"
+
+
+monitored_metrics = {
+  1 = {
+    # environment = "npd"
+    metric = "aws.rds.cpuutilization"
+    # monitor_name      = "npd-gpt-plim_aws_rds_cpuutilization"
+    metric_type       = "query alert"
+    operator          = ">="
+    warning           = 60
+    critical          = 80
+    warning_recovery  = 59
+    critical_recovery = 79
+    period            = "10m"
+  }
+  # 2 = {
+  #   metric = "aws.rds.freeable_memory"
+  #   # monitor_name      = "npd-gpt-plim_aws_rds_freeable_memory"
+  #   operator          = "<="
+  #   warning           = 1000000000
+  #   critical          = 800000000
+  #   warning_recovery  = 1000000001
+  #   critical_recovery = 800000001
+  #   period            = "10m"
+  # }
+  # 3 = {
+  #   metric = "aws.rds.replica_lag"
+  # }
+  # 4 = {
+  #   metric            = "aws.rds.database_connections"
+  #   operator          = ">="
+  #   warning           = 1050
+  #   critical          = 1200
+  #   warning_recovery  = 1049
+  #   critical_recovery = 1199
+  #   period            = "10m"
+  # }
+  # 5 = {
+  #   metric            = "aws.rds.disk_queue_depth"
+  #   operator          = ">="
+  #   warning           = 70
+  #   critical          = 80
+  #   warning_recovery  = 59
+  #   critical_recovery = 79
+  #   period            = "10m"
+  # }
+  # 6 = {
+  #   metric            = "aws.rds.burst_balance"
+  #   operator          = "<="
+  #   warning           = 30
+  #   critical          = 20
+  #   warning_recovery  = 31
+  #   critical_recovery = 21
+  #   period            = "10m"
+  # }
+  # 7 = {
+  #   metric            = "aws.rds.swap_usage"
+  #   operator          = ">="
+  #   warning           = 1610000000
+  #   critical          = 2000000000
+  #   warning_recovery  = 1609999999
+  #   critical_recovery = 1999999999
+  #   period            = "10m"
+  # }
+  # 8 = {
+  #   metric            = "aws.rds.read_throughput"
+  #   operator          = ">="
+  #   warning           = 500000000
+  #   critical          = 600000000
+  #   warning_recovery  = 499999999
+  #   critical_recovery = 599999999
+  #   period            = "10m"
+  # }
+  # 9 = {
+  #   metric            = "aws.rds.write_throughput"
+  #   operator          = ">="
+  #   warning           = 300000000
+  #   critical          = 400000000
+  #   warning_recovery  = 299999999
+  #   critical_recovery = 399999999
+  #   period            = "10m"
+  # }
+  # 10 = {
+  #   metric            = "aws.rds.read_iops"
+  #   operator          = ">="
+  #   warning           = 9000
+  #   critical          = 10000
+  #   warning_recovery  = 8999
+  #   critical_recovery = 9999
+  #   period            = "10m"
+  # }
+  # 11 = {
+  #   metric            = "aws.rds.write_iops"
+  #   operator          = ">="
+  #   warning           = 9000
+  #   critical          = 10000
+  #   warning_recovery  = 8999
+  #   critical_recovery = 9999
+  #   period            = "10m"
+
+  # }
+  # 12 = {
+  #   metric = "aws.rds.read_latency"
+  # }
+  # 13 = {
+  #   metric = "aws.rds.write_latency"
+  # }
+  # 14 = {
+  #   metric            = "aws.rds.network_receive_throughput"
+  #   operator          = ">="
+  #   warning           = 18000000
+  #   critical          = 20000000
+  #   warning_recovery  = 17999999
+  #   critical_recovery = 19999999
+  #   period            = "10m"
+  # }
+  # 15 = {
+  #   metric            = "aws.rds.network_transmit_throughput"
+  #   operator          = ">="
+  #   warning           = 270000000
+  #   critical          = 300000000
+  #   warning_recovery  = 269999999
+  #   critical_recovery = 299999999
+  #   period            = "10m"
+  # }
+  16 = {
+    # environment = "npd"
+    metric = "aws.ec2.cpuutilization"
+    # monitor_name      = "npd-gpt-plim_aws_rds_cpuutilization"
+    metric_type       = "query alert"
+    operator          = ">="
+    warning           = 60
+    critical          = 80
+    warning_recovery  = 59
+    critical_recovery = 79
+    period            = "10m"
+    byidentifier      = "instance_id"
+  }
+
+}
+
+
